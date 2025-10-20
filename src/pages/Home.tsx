@@ -1,17 +1,59 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Home.css';
 
 const Home: React.FC = () => {
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const handleVideoPlay = () => {
+      if (desktopVideoRef.current) {
+        desktopVideoRef.current.play().catch(console.log);
+      }
+      if (mobileVideoRef.current) {
+        mobileVideoRef.current.play().catch(console.log);
+      }
+    };
+
+    // Try to play videos on load
+    handleVideoPlay();
+
+    // Add event listeners for user interaction
+    document.addEventListener('touchstart', handleVideoPlay, { once: true });
+    document.addEventListener('click', handleVideoPlay, { once: true });
+
+    return () => {
+      document.removeEventListener('touchstart', handleVideoPlay);
+      document.removeEventListener('click', handleVideoPlay);
+    };
+  }, []);
+
   return (
     <div className="home">
       <div className="video-background">
-        <video className="desktop-video" autoPlay muted loop playsInline>
+        <video 
+          ref={desktopVideoRef}
+          className="desktop-video" 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          preload="auto"
+          webkit-playsinline="true"
+        >
           <source src="/desk_01nuovo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
-        <video className="mobile-video" autoPlay muted loop playsInline>
+        <video 
+          ref={mobileVideoRef}
+          className="mobile-video" 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          preload="auto"
+          webkit-playsinline="true"
+        >
           <source src="/tel_01nuovo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
         <div className="video-overlay"></div>
       </div>
