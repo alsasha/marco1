@@ -34,25 +34,26 @@ const Home: React.FC = () => {
         <video 
           ref={desktopVideoRef}
           className="desktop-video" 
-          autoPlay 
+          autoPlay
           muted 
           loop 
           playsInline 
           preload="auto"
-          webkit-playsinline="true"
         >
           <source src="/desk_01nuovo.mp4" type="video/mp4" />
         </video>
         <video 
+          preload="metadata"
           ref={mobileVideoRef}
           className="mobile-video" 
-          autoPlay 
+          autoPlay
           muted 
           loop 
           playsInline 
-          preload="auto"
           webkit-playsinline="true"
-        >
+                  >
+          <source src="/tel_01nuovo.h264" type='video/mp4; codecs="hvc1"' />
+          <source src="/tel_01nuovo_compressed.mp4" type="video/mp4" />
           <source src="/tel_01nuovo.mp4" type="video/mp4" />
         </video>
         <div className="video-overlay"></div>
