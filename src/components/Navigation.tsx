@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,12 +17,14 @@ const Navigation: React.FC = () => {
 
   return (
     <nav className="navigation">
-      <div className="nav-container">
-        <div className="nav-logo">
-          <Link to="/">
-            <span className="nav-logo-text">brainoo</span>
-          </Link>
-        </div>
+      <div className={`nav-container ${isHomePage ? 'home-page' : ''}`}>
+        {!isHomePage && (
+          <div className="nav-logo">
+            <Link to="/">
+              <span className="nav-logo-text">brainoo</span>
+            </Link>
+          </div>
+        )}
         {/* Desktop Navigation */}
         <div className="nav-menu desktop-nav">
           <Link to="/about" className="nav-link">

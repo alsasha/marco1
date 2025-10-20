@@ -17,6 +17,11 @@
   align-items: center;
 }
 
+/* When logo is hidden on home page, center the navigation */
+.nav-container.home-page {
+  justify-content: center;
+}
+
 
 /* Desktop Navigation */
 .desktop-nav {
