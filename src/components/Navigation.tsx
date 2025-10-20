@@ -16,6 +16,11 @@ const Navigation: React.FC = () => {
   return (
     <nav className="navigation">
       <div className="nav-container">
+        <div className="nav-logo">
+          <Link to="/">
+            <span className="nav-logo-text">brainoo</span>
+          </Link>
+        </div>
         {/* Desktop Navigation */}
         <div className="nav-menu desktop-nav">
           <Link to="/about" className="nav-link">

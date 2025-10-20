@@ -5,6 +5,7 @@
   right: 0;
   z-index: 1000;
   padding: 1rem 0;
+  transition: background-color 0.3s ease;
 }
 
 .nav-container {
@@ -63,13 +64,13 @@
 }
 
 .burger-line.active:nth-child(3) {
-  transform: rotate(45deg) translate(-6px, -6px);
+  transform: rotate(45deg) translate(-7px, -6px);
 }
 
 /* Mobile Navigation Menu */
 .mobile-nav {
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
   right: 0;
   background: gainsboro;
@@ -91,7 +92,7 @@
   display: block;
   font-family: 'Crimson Pro', serif;
   font-size: 1.2rem;
-  color: white;
+  color: black;
   text-decoration: none;
   padding: 1rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -116,6 +117,7 @@
   .mobile-menu-toggle {
     display: flex;
     margin-left: auto;
+    z-index: 1;
   }
   
   .nav-container {
@@ -127,4 +129,26 @@
   .mobile-nav {
     display: none;
   }
+}
+
+.nav-logo-text {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-logo-text:hover {
+  color: gray;
+}
+
+.nav-logo, a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: gray;
+    }
 }
