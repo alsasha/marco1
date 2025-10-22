@@ -18,13 +18,11 @@ const Navigation: React.FC = () => {
   return (
     <nav className="navigation">
       <div className={`nav-container ${isHomePage ? 'home-page' : ''}`}>
-        {!isHomePage && (
           <div className="nav-logo">
             <Link to="/">
-              <span className="nav-logo-text">brainoo</span>
+              <img src="/logo_2.png" alt="brainoo" className="nav-logo-image" />
             </Link>
           </div>
-        )}
         {/* Desktop Navigation */}
         <div className="nav-menu desktop-nav">
           <Link to="/about" className="nav-link">
@@ -50,6 +48,12 @@ const Navigation: React.FC = () => {
         </Link>
         <Link to="/events" className="mobile-nav-link" onClick={closeMenu}>
           events
+        </Link>
+        <Link to="/contact" className="mobile-nav-link" onClick={closeMenu}>
+          contact
+        </Link>
+        <Link to="/press" className="mobile-nav-link" onClick={closeMenu}>
+          press
         </Link>
       </div>
     </nav>

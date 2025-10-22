@@ -33,6 +33,62 @@
   -webkit-playsinline: true;
 }
 
+/* Hide all video controls completely */
+.video-background video::-webkit-media-controls {
+  display: none !important;
+}
+
+.video-background video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.video-background video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.video-background video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+.video-background video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+}
+
+.video-background video::-webkit-media-controls-timeline {
+  display: none !important;
+}
+
+.video-background video::-webkit-media-controls-current-time-display {
+  display: none !important;
+}
+
+.video-background video::-webkit-media-controls-time-remaining-display {
+  display: none !important;
+}
+
+.video-background video::-webkit-media-controls-volume-slider {
+  display: none !important;
+}
+
+.video-background video::-webkit-media-controls-mute-button {
+  display: none !important;
+}
+
+.video-background video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+/* Additional iOS mobile fixes */
+@media (max-width: 768px) {
+  .video-background video {
+    -webkit-media-controls: none;
+    -webkit-media-controls-panel: none;
+    -webkit-media-controls-play-button: none;
+    -webkit-media-controls-start-playback-button: none;
+    -webkit-media-controls-overlay-play-button: none;
+  }
+}
+
 /* Desktop video - show on larger screens */
 .desktop-video {
   display: block;
@@ -73,9 +129,9 @@
 
 .main-title {
   font-family: 'Crimson Pro', serif;
-  font-size: 4.8rem;
+  font-size: 3rem;
   font-weight: 300;
-  letter-spacing: 3px;
+  letter-spacing: 0;
   line-height: 0.9;
 }
 
@@ -87,22 +143,22 @@
 
 .subtitle {
   font-family: 'Crimson Pro', serif;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 200;
-  letter-spacing: 2px;
+  letter-spacing: 0;
   opacity: 0.9;
+  line-height: 0.9;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .main-title {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
+    font-size: 3rem;
+    letter-spacing: 0;
   }
   
   .subtitle {
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+    font-size: 1.5rem;
   }
   
   .content {
@@ -116,10 +172,10 @@
 
 @media (max-width: 480px) {
   .main-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   
   .subtitle {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }

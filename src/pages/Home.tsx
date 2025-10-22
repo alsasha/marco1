@@ -40,6 +40,7 @@ const Home: React.FC = () => {
           playsInline 
           preload="auto"
           poster="/tel_01nuovo.png"
+          controls={false}
         >
           <source src="/desk_01nuovo.mp4" type="video/mp4" />
         </video>
@@ -53,6 +54,7 @@ const Home: React.FC = () => {
           playsInline 
           webkit-playsinline="true"
           poster="/tel_01nuovo.png"
+          controls={false}
         >
           <source src="/tel_01nuovo.h264" type='video/mp4; codecs="hvc1"' />
           <source src="/tel_01nuovo_compressed.mp4" type="video/mp4" />
