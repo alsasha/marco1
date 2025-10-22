@@ -46,7 +46,10 @@
 
 /* Mobile Burger Menu */
 .mobile-menu-toggle {
-  display: none;
+  /* display: none; */
+  display: flex;
+    margin-left: auto;
+    z-index: 1;
   flex-direction: column;
   cursor: pointer;
   padding: 0.5rem;
@@ -132,7 +135,7 @@
 
 @media (min-width: 769px) {
   .mobile-nav {
-    display: none;
+    /* display: none; */
   }
 }
 

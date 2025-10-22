@@ -44,14 +44,14 @@ const Navigation: React.FC = () => {
             </Link>
           </div>
         {/* Desktop Navigation */}
-        <div className="nav-menu desktop-nav">
+        {/* <div className="nav-menu desktop-nav">
           <Link to="/about" className="nav-link">
             about
           </Link>
           <Link to="/events" className="nav-link">
             events
           </Link>
-        </div>
+        </div> */}
 
         {/* Mobile Burger Menu */}
         <div className="mobile-menu-toggle" onClick={toggleMenu}>
