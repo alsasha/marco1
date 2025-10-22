@@ -53,7 +53,7 @@
 }
 
 .burger-line {
-  width: 25px;
+  width: 24px;
   height: 3px;
   background-color: black;
   margin: 3px 0;
@@ -62,7 +62,7 @@
 }
 
 .burger-line.active:nth-child(1) {
-  transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-7px, 6px);
 }
 
 .burger-line.active:nth-child(2) {
