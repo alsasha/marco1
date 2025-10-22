@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 
@@ -6,6 +6,7 @@ const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const navRef = useRef<HTMLElement>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,8 +16,27 @@ const Navigation: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  // Handle click outside to close menu
+  useEffect(() => {
+    const handleClickOutside = (event: Event) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        closeMenu();
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   return (
-    <nav className="navigation">
+    <nav ref={navRef} className="navigation">
       <div className={`nav-container ${isHomePage ? 'home-page' : ''}`}>
           <div className="nav-logo">
             <Link to="/">
