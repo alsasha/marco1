@@ -4,6 +4,8 @@ import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import About from './pages/About';
 import Events from './pages/Events';
+import Contact from './pages/Contact';
+import Press from './pages/Press';
 import './App.css';
 
 function App() {
@@ -11,11 +13,13 @@ function App() {
     <Router>
       <div className="App">
         <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/events" element={<Events />} />
-        </Routes>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/press" element={<Press />} />
+            </Routes>
       </div>
     </Router>
   );
