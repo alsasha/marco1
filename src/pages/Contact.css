@@ -2,7 +2,7 @@
 .contact-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding: 2rem 0;
+  padding: calc(72px + 2rem) 0;
 }
 
 .contact-container {
@@ -146,7 +146,7 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .contact-page {
-    padding: 1rem 0;
+    padding: calc(72px + 1rem) 0;
   }
   
   .contact-container {

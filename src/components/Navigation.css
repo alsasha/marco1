@@ -10,7 +10,6 @@
 }
 
 .nav-container {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
@@ -52,7 +51,6 @@
     z-index: 1;
   flex-direction: column;
   cursor: pointer;
-  padding: 0.5rem;
 }
 
 .burger-line {
@@ -84,7 +82,7 @@
   right: 0;
   background: white;
   backdrop-filter: blur(10px);
-  padding: 2rem;
+  padding: 2rem 1rem;
   transform: translateY(-100%);
   opacity: 0;
   visibility: hidden;
@@ -135,6 +133,7 @@
 
 @media (min-width: 769px) {
   .mobile-nav {
+    padding: 2rem;
     /* display: none; */
   }
 }

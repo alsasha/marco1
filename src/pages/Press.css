@@ -2,7 +2,7 @@
 .press-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 2rem 0;
+  padding: calc(72px + 2rem) 0;
 }
 
 .press-container {
@@ -204,7 +204,7 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .press-page {
-    padding: 1rem 0;
+    padding: calc(72px + 1rem) 0;
   }
   
   .press-container {
