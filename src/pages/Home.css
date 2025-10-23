@@ -183,9 +183,6 @@
   .content {
     padding: 1rem;
   }
-  
-  .subtitle-container {
-  }
 }
 
 @media (max-width: 480px) {
